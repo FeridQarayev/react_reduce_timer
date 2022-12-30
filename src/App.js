@@ -1,34 +1,7 @@
 import { Button } from "@mui/material";
 import { useReducer, useRef } from "react";
 import "./App.css";
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "SET_START":
-      return {
-        startBtn: true,
-        stopBtn: false,
-        resetBtn: false,
-        myTime: ++state.myTime,
-      };
-    case "SET_STOP":
-      return {
-        startBtn: false,
-        stopBtn: true,
-        resetBtn: false,
-        myTime: state.myTime,
-      };
-    case "SET_RESET":
-      return {
-        startBtn: false,
-        stopBtn: false,
-        resetBtn: true,
-        myTime: 0,
-      };
-    default:
-      return state;
-  }
-};
+import reducer from "./reducers/reducer";
 
 function App() {
   let time = useRef(0);
